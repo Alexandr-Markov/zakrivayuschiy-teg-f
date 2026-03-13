@@ -124,7 +124,7 @@
   outline: 2px solid var(--heart__outline-transparent);
   transition: outline 0.3s ease;
   padding: 0;
-  outline-offset: -1px;
+  outline-offset: -2px;
 }
 
 .card__icon-button:focus {
