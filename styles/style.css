@@ -13,4 +13,337 @@
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  font-family: var(--main__font), sans-serif;
+  font-variation-settings: 'wght' var(--main__text_weight);
+  background-image: var(--gradient_left-right), var(--gradient_top-bottom), var(--gradient_cover);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  margin: var(--vertical_margin) auto;
+  font-variation-settings: 'wght' var(--main__text_weight), 'wdth' 100, 'opsz' 0;
+  font-size: 18px;
+  width: var(--clamp__section_width);
+}
+
+.header {
+  background-color: var(--page__background-color);
+  margin-bottom: 96px;
+}
+
+.header__text-title {
+  font-family: var(--accent__font);
+  font-weight: 400;
+  font-size: var(--header_title-size);
+  text-transform: uppercase;
+  text-align: center;
+  padding: var(--title__vertical-padding) var(--title__sides-padding);
+  border: 2px solid var(--border_color);
+}
+
+.accent__title {
+  font-size: var(--header__accent_title-size);
+  display: block;
+  margin-bottom: 18px;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 49px;
+}
+
+.card {
+  border: 2px solid var(--border_color);
+  background-color: var(--page__background-color);
+}
+
+.main__text-title {
+  font-variation-settings: 'wght' var(--main__title_weight), 'wdth' 100, 'opsz' 0;
+  font-size: 18px;
+  padding: 4px 10px;
+}
+
+.image__container {
+  position: relative;
+}
+
+.card__image {
+  width: 100%;
+  object-fit: cover;
+  border-top: 2px solid var(--border_color);
+  border-bottom: 2px solid var(--border_color);
+}
+
+.many-filters {
+  filter: sepia(1) contrast(2) brightness(200%);
+}
+
+.card__text {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  opacity: 0.5;
+  font-family: var(--accent__font);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 100%;
+  text-transform: uppercase;
+  text-shadow: -1px 0 var(--shadow__accent_color), 0 1px var(--shadow__accent_color), 1px 0 var(--shadow__accent_color), 0 -1px var(--shadow__accent_color);
+  color: transparent;
+  mix-blend-mode: hard-light;
+}
+
+@supports ((text-stroke: 1px var(--shadow__accent_color)) or (-webkit-text-stroke: 1px var(--shadow__accent_color))) {
+  .card__text {
+    text-shadow: none;
+    -webkit-text-stroke: 1px var(--shadow__accent_color);
+  }
+}
+
+.main__text {
+  margin: 17px 25px;
+}
+
+.secondary_text {
+  margin: 25px;
+}
+
+.buttons {
+  display: flex;
+  justify-self: flex-end;
+  margin: 25px 25px 23px;
+}
+
+.card__icon-button {
+  border: none;
+  background-color: transparent;
+  outline: 2px solid var(--heart__outline-transparent);
+  transition: outline 0.3s ease;
+}
+
+.card__icon-button:focus {
+  outline: 2px solid var(--heart__outline-transparent);
+}
+
+.card__icon-button:focus-visible {
+  outline: 2px solid var(--heart__outline);
+}
+
+.like-icon {
+  transform-origin: center;
+}
+
+.like-icon:hover {
+  .core {
+    fill: var(--contour-color);
+    transition: fill 0.3s linear;
+  }
+
+  .main-body {
+    fill: var(--contour-color);
+    transition: fill 0.3s 0.05s linear;
+  }
+}
+
+.like-icon:active {
+  .core {
+    fill: var(--animation-fill-color);
+    transition: fill 0.3s linear;
+  }
+
+  .main-body {
+    fill: var(--animation-fill-color);
+    transition: fill 0.3s 0.05s linear;
+  }
+}
+
+.like-icon.is-liked {
+  animation: scale_icon 0.3s 0.1s ease-in reverse;
+
+  .core {
+    fill: var(--animation-fill-color);
+    transition: fill 0.3s linear;
+  }
+
+  .main-body {
+    fill: var(--animation-fill-color);
+    transition: fill 0.3s 0.05s linear;
+  }
+
+  .contour {
+    fill: var(--animation-fill-color);
+    transition: fill 0.3s 0.06s linear;
+  }
+
+  .sparks {
+    animation: transparent_sparks 0.3s 0.3s reverse;
+  }
+}
+
+.contour {
+  transition: fill 0.1s linear;
+}
+
+.main-body {
+  transition: fill 0.3s linear;
+}
+
+.core {
+  transition: fill 0.3s 0.03s linear;
+}
+
+.sparks {
+  opacity: 0;
+}
+
+.button {
+  background-color: var(--button__background-color);
+  transition: box-shadow 0.3s ease;
+  transition: scale 0.5s ease-in-out;
+  position: relative;
+}
+
+.button:focus {
+  outline: none;
+}
+
+.button:focus-visible {
+  box-shadow: 2px 2px var(--border_color);
+}
+
+.button::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  transition: transform 0.5s ease-in-out;
+  background-color: var(--button__accent-color);
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+.button:hover::before {
+  transform: scaleX(1);
+}
+
+.card__like-button {
+  min-width: 130px;
+  height: 38px;
+}
+
+.button__text {
+  font-family: var(--accent__font);
+  font-family: Press Start 2P;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 90%;
+  position: relative;
+  mix-blend-mode: difference;
+  color: var(--button__text-color);
+}
+
+.brightness {
+  filter: brightness(200%);
+}
+
+.contrast {
+  filter: contrast(20%);
+}
+
+.blur {
+  filter: blur(3px);
+}
+
+.opacity {
+  filter: opacity(0.5);
+}
+
+.grayscale {
+  filter: grayscale(1);
+}
+
+.saturate {
+  filter: saturate(158%);
+}
+
+.sepia {
+  filter: sepia(100%);
+}
+
+.footer {
+  width: var(--footer_width);
+  margin: 50px auto 0;
+}
+
+.footer_button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 55px;
+  width: var(--footer_width);
+}
+
+.floppy {
+  mix-blend-mode: difference;
+}
+
+.dialog {
+  width: var(--dialog__container-width);
+  height: 191px;
+  border: 2px solid var(--border_color);
+}
+
+.dialog_container {
+  display: grid;
+  grid-template-columns: 0.17fr 1fr;
+  grid-template-rows: 63px 38px;
+  margin: 10px;
+  row-gap: 30px;
+  column-gap: 20px;
+  width: var(--dialog__grid-width);
+  align-items: center;
+}
+
+.dialog_close {
+  grid-column: span 2;
+  height: 100%;
+}
+
+.dialog .button__text {
+  line-height: 150%;
+  text-transform: uppercase;
+}
+
+.dialog::backdrop {
+  background-color: var(--backdrop);
+}
+
+@media (width <= 375px) {
+  .header {
+    margin-top: 100px;
+    margin-bottom: 100px;
+  }
+
+  .main__text {
+  margin: 21px 25px;
+}
+
+  .buttons {
+    margin: 25px 25px 23px;
+  }
+  
+  .footer_button {
+    flex-direction: column;
+    width: 306px;
+    height: 84px;
+  }
+
+  .footer_image {
+    width: 28px;
+    height: 28px;
+  }
+
+  .dialog_container {
+    margin: 9px 20px;
+  }
 }

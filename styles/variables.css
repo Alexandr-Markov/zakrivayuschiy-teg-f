@@ -1,1 +1,32 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+:root {
+  --main__font: 'Inter-Variable';
+  --accent__font: 'PressStart2P';
+  --main__title_weight: 715;
+  --main__text_weight: 410;
+  --gradient_left-right: repeating-linear-gradient(to right, rgb(211 211 211) 0 2px, rgb(211 211 211 / 0) 2px 4px);
+  --gradient_top-bottom: repeating-linear-gradient(to bottom, rgb(211 211 211) 0 2px, rgb(211 211 211 / 0) 2px 4px);
+  --gradient_cover: linear-gradient(to bottom, #e7e7e7 0.01%, #1a1a1a);
+  --clamp__section_width: clamp(23.313rem, 16.116rem + 30.704vi, 43.75rem);
+  --vertical_margin: 98px;
+  --shadow__accent_color: #fff;
+  --header_title-size: clamp(0.875rem, 0.677rem + 0.845vi, 1.438rem);
+  --header__accent_title-size: clamp(3.063rem, 2.71rem + 1.502vi, 4.063rem);
+  --border_color: #000;
+  --title__vertical-padding: clamp(7.625rem, 7.449rem + 0.751vi, 8.125rem);
+  --title__sides-padding: clamp(1rem, -1.344rem + 10vi, 7.656rem);
+  --title__vertical-padding: clamp(7.625rem, 7.405rem + 0.939vi, 8.25rem);
+  --title__sides-padding: clamp(0rem, -2.74rem + 11.69vi, 7.781rem);
+  --button__text-color: #fff;
+  --button__background-color: #fff;
+  --button__accent-color: #000;
+  --page__background-color: #fff;
+  --heart__outline-transparent: rgb(0 0 0 / 0);
+  --heart__outline: rgb(0 0 0);
+  --contour-color: #000;
+  --animation-fill-color: #ff0000;
+  --footer_width: clamp(19.125rem, 18.487rem + 2.723vi, 20.938rem);
+  --dialog__container-width: clamp(21.313rem, 21.048rem + 1.127vi, 22.063rem);
+  --dialog__grid-width: clamp(16.313rem, 15.608rem + 3.005vi, 18.313rem);
+  --backdrop: rgb(0 0 0 / 0.75);
+}
