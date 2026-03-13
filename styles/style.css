@@ -14,7 +14,6 @@
   min-inline-size: 320px;
   min-block-size: 100dvb;
   font-family: var(--main__font), sans-serif;
-  font-variation-settings: 'wght' var(--main__text_weight);
   background-image: var(--gradient_left-right), var(--gradient_top-bottom), var(--gradient_cover);
   background-repeat: no-repeat;
   background-size: cover;
@@ -199,7 +198,6 @@
 .button {
   background-color: var(--button__background-color);
   transition: box-shadow 0.3s ease;
-  transition: scale 0.5s ease-in-out;
   position: relative;
 }
 
@@ -232,7 +230,6 @@
 
 .button__text {
   font-family: var(--accent__font);
-  font-family: Press Start 2P;
   font-weight: 400;
   font-size: 14px;
   line-height: 90%;
