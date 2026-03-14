@@ -35,9 +35,11 @@
   font-size: var(--header_title-size);
   text-transform: uppercase;
   text-align: center;
-  padding: var(--title__vertical-padding) var(--title__sides-padding);
+  padding: var(--title__vertical-padding) 0;
   border: 2px solid var(--border_color);
   line-height: 100%;
+  max-width: var(--max_width);
+  width: 100%;
 }
 
 .accent__title {
@@ -91,7 +93,7 @@
   line-height: 100%;
   text-transform: uppercase;
   text-shadow: -1px 0 var(--shadow__accent_color), 0 1px var(--shadow__accent_color), 1px 0 var(--shadow__accent_color), 0 -1px var(--shadow__accent_color);
-  color: transparent;
+  color: var(--contour-color);
   mix-blend-mode: hard-light;
 }
 
@@ -113,7 +115,7 @@
 
 .buttons {
   display: flex;
-  justify-self: flex-end;
+  justify-content: flex-end;
   gap: 5px;
   margin: 25px;
 }
@@ -207,6 +209,7 @@
 .button {
   background-color: var(--button__background-color);
   transition: box-shadow 0.3s ease;
+  border: 2px solid var(--border_color);
   position: relative;
 }
 
@@ -290,8 +293,9 @@
 }
 
 .dialog[open] {
-  width: var(--dialog__container-width);
+  max-width: var(--dialog__container-width);
   border: 2px solid var(--border_color);
+  padding: 18px 28px;
 }
 
 .dialog_container {
@@ -300,8 +304,8 @@
   row-gap: 30px;
   column-gap: 20px;
   width: var(--dialog__grid-width);
+  justify-content: center;
   align-items: center;
-  justify-self: center;
   padding: 9.5px 0;
 }
 
@@ -326,8 +330,12 @@
   }
 
   .main__text {
-  margin: 21px 24px;
-}
+    margin: 21px 24px;
+  }
+
+  .dialog[open] {
+    padding: 18px 38px;
+  }
 
   .dialog_button {
     flex-direction: column;
